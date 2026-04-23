@@ -1,0 +1,154 @@
+/* Reset des styles par defaut pour s'assurer que tous les navigateurs n'affichent pas le contenu de manière uniforme*/
+*{
+    margin: 0;/* supprimer les marges externes par defaut*/
+    padding: 0;/* supprimer les marges interne par defaut*/
+    font-family: Arial, sans-serif;/* definir la police globale de la page*/
+    box-sizing: border-box;/* permet de garder la taille des éléments correcte*/
+}
+/*=== entête (header) ===*/
+/* conteneur de l'entête */
+header{
+    background-color: black;/* couleur d'arrière plan*/
+    opacity: 0.8;/* rend légèrement transparent l'entête*/
+    padding: 15px 5%;/* ajoute un espace interieur ( haut et bas: 15px , gauche et droite: 5% de la largeur)*/ 
+}
+/* structure du div : text à gauche et menu à droite*/
+.nav-container{
+    display: flex;/* mettre les élélments de type block sur la même ligne*/
+    justify-content: space-between;/* espace entre les éléments*/
+    align-items: center;/* aligner les éléments*/
+    max-width: 1200px;/*adapté aux grabds écrans*/
+    margin: auto;/* cnetre l'élément père*/
+}
+/* style du logo CAFE ROSE*/
+.logo{
+    color: rgb(231, 5, 111);
+    font-size: 24px;
+    font-weight: bold;
+}
+.logo span{
+    color: white;
+}
+/* === MENU DE NAVIGATION === */
+/* style du menu*/
+.nav-links{
+    /* supprimer les puces*/
+    list-style: none;
+    /* place les éléments sur une seule ligne*/
+    display: flex;
+}
+/* espacement entre les éléments du menu*/
+.nav-links li{
+    margin-left: 20px;
+}
+/* style des liens du menu*/
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+/*====IMAGE PRINCIPALE====*/
+.hero img{
+    width: 100%; /* l'image prend totale la largeur de la page*/
+    height: auto;/*Ajuste automatiquement la hauteur de l'image*/
+    display: block;
+}
+/*====section avec formulaire et video*/
+.content-section{
+    display: flex;/*UTILISEATION DE FLEX POUR ALIGNER LES ELEMENTS SUR UNE SEULE LIGNE*/
+    justify-content:space-between;
+    align-items: center;
+    width: 90%;/*Reduit la largeur a 90% pour ne pas touché les bordures*/
+    max-width: 1200px;
+    margin: 50px auto;/*l'espace en haut et en bas de 50px et centrer horizontalement*/
+    
+}
+/*====FORMULAIRE D'inscription=======*/
+/*Contenaire de formulaire*/
+.form-section{
+    width: 45%;/*Le formulaire prend 45% de la largeur qui est la moitié*/
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    padding: 20px;
+
+}
+/*style du titre du formulaire*/
+.form-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*style des label*/
+form label{
+    margin-top: 10px;
+    display: block;
+}
+/*Style des champs de saisie*/
+form input{
+    width: 100%;/*Champs qui prennent toute la largeur disponible*/
+    padding: 4px;/*Ajoute l'espace a l'interieur*/
+    margin-top: 5px;/*Espace externe du haut de chaque champ*/
+    border-radius: 5px;/*permet d'arrondir les coins*/
+    border: none;/*supprime la bordure*/
+}
+/*Style du bouton*/
+button{
+    width:100%;/*le bouton prend toute  la largeur */
+    padding: 6px;/*Ajoute de l'espace a l'interieur*/
+    margin-top: 15px;/*Espacement au dessus du bouton*/
+    border: none;/*Enlever les bordures du bouton*/
+    background-color: pink;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+/*=========video========*/
+/*Contenaire de la  video*/
+.video-section{
+    width: 45%;/*prend la moitié de la section*/
+}
+/*Style de la video*/
+.video-section video{
+    width: 100%;/* La video prend toute la largeur de div*/
+    border-radius: 8px;/*Arrodir legerement les coins de la video*/
+}
+/*======Pied de page=======*/
+footer{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+/*===========Responsivité=========*/
+/*Règle css appliquées aux ecrans de taille inferieur à 768*/
+@media(max-width: 768px){
+    /*Ajustement du header alignement en colonne:*/
+    .nav-container{
+        flex-direction: column;/*Place les elements du header les uns au dessous des autres*/
+        text-align: center;
+    }
+    /*Menu: affiche les éléments du menu en colonne*/
+    .nav-links{
+        flex-direction: column;/*Place les éléments du menu en colonne*/
+        margin-top: 10px;/*Ajoute un petit espace au-desous*/
+    }
+    .nav-links li{
+        margin: 5px 0;
+    }
+    /*Section 2:Formulaire et video passe en colonne*/
+    .content-section{
+        flex-direction: column;/*Formulaire au-desous dela video*/
+        align-items: center;
+    }
+    /*Style du formulaire et video*/
+    .form-section,.video-section{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+  
+}
+
+
+
